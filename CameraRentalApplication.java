@@ -83,8 +83,13 @@ public class CameraRentalApplication {
 		sc.nextLine();
 		System.out.println("Enter model:");
 		model=sc.nextLine();
+		if(!lis_cam.isEmpty()) {
 		Camera cam=lis_cam.get(lis_cam.size()-1);
-		camera_id=cam.camera_id+1;
+		
+		camera_id=cam.camera_id+1;}
+		else {
+			camera_id=1;
+		}
 		lis_cam.add(new Camera(camera_id,rent_amnt,brand,model,available));
 		System.out.println("Camera added succesfully to the list");		
 	}
